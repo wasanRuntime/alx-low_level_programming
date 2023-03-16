@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m 'Intell'
+git commit -m 'UNIX is basically a simple operating system, but you have to be a genius to understand the simplicity'
 git push
