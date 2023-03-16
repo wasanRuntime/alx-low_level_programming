@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m '5. Hello, printf'
+git commit -m 'Size is not grandeur, and territory does not make a nation'
 git push
