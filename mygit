@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m 'My 0. Preprocessor'
+git commit -m 'Added README file'
 git push
