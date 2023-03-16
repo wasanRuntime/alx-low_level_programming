@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m 'Assemble'
+git commit -m 'script that compiles a C file and creates an executable named cisfun.'
 git push
