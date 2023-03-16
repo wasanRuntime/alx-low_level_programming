@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m 'Size is not grandeur, and territory does not make a nation'
+git commit -m 'Intell'
 git push
