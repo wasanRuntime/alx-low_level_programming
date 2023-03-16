@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m 'Added README file'
+git commit -m 'Assemble'
 git push
