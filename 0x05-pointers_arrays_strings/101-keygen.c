@@ -1,13 +1,23 @@
-#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * main - generates random passwords for 101-crackme
+ * Return: zero
  */
-int _putchar(char c)
+int main(void)
 {
-	return (write(1, &c, 1));
+	int sum;
+	char c;
+
+	srand(time(NULL));
+	while (sum <= 2645)
+	{
+		c = rand() % 128;
+		sum += c;
+		putchar(c);
+	}
+	putchar(2772 - sum);
+	return (0);
 }
