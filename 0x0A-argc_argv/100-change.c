@@ -4,8 +4,8 @@
 
 /**
 * main - prints the minimum 
-* @argc: counter
-* @argv: arguments 
+* @argc: argument counter
+* @argv: number of arguments passed
 * Return: least number of coins, 0 if negative amount, 1 if amount not given
 */
 
