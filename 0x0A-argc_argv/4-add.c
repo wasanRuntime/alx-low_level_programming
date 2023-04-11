@@ -2,17 +2,18 @@
 #include <stdlib.h>
 
 /**
- * main - Prints the addition of positive numbers
- * @argc: The number of arguments passed to the program.
+ * main - Prints the sum
+ * @argc: The number of arguments passed.
  * @argv: An array of pointers to the arguments.
  *
  * Return: If one of the numbers contains symbols that are non-digits - 1.
- *         Otherwise - 0.
+ *Otherwise - 0.
  */
 
 int main(int argc, char *argv[])
 {
-	int x, i, sum = 0;
+	int x, i;
+        int sum = 0;
 
 	for (x = 1; x < argc; x++)
 	{
