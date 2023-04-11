@@ -1,53 +1,38 @@
-#include "main.h"
 #include <stdlib.h>
+#include <stddef.h>
 /**
- * _strlen - calculates the length of a given string.
- * @s: string to be measured
- * Return: length of the string
- */
-unsigned int _strlen(char *s)
-{
-	unsigned int i = 0;
-
-	for (; *(s + i) != '\0'; i++)
-		;
-
-	return (i);
-}
-
-/**
- * str_concat - Function that concatenates two strings.
- * @s1: String s1 given as a first parameter.
- * @s2: String s2 given as a second parameter.
+ * argstostr - concatenates all arguments of a program
+ * @ac: argument count
+ * @av: argument vector
  *
- * Return: char
+ * Return: pointer to new string containing concatenated args,
+ *         or NULL if ac == 0 or av == NULL or on failure
  */
-
-char *str_concat(char *s1, char *s2)
+char *argstostr(int ac, char **av)
 {
-	unsigned int size1 = 0, size2 = 0, i = 0;
-	char *s1s2 = NULL;
+	int i, j, len = 0, pos = 0;
+	char *str;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-
-	size1 = _strlen(s1);
-	size2 = _strlen(s2);
-
-	s1s2 = (char *)malloc((size1 + size2 + 1) * (sizeof(char)));
-
-	if (s1s2 == NULL)
+	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	for (i = 0; i < size1; i++)
-		*(s1s2 + i) = *(s1 + i);
+	for (i = 0; i < ac; i++)
+		for (j = 0; av[i][j]; j++)
+			len++;
+	str = malloc(sizeof(char) * (len + ac + 1));
+	if (str == NULL)
+		return (NULL);
+	for (i = 0; i < ac; i++)
+	{
+		for (j = 0; av[i][j]; j++)
+		{
+			str[pos] = av[i][j];
+			pos++;
+		}
+		str[pos] = '\n';
+		pos++;
+	}
+	str[pos] = '\0';
 
-	for (i = 0; i < size2; i++)
-		*(s1s2 + (size1 + i)) = *(s2 + i);
-
-	*(s1s2 + (size1 + size2)) = '\0';
-
-	return ((char *)s1s2);
+	return (str);
 }
