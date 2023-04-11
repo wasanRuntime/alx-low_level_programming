@@ -3,10 +3,10 @@
 #include "main.h"
 
 /**
-* main - prints the minimum 
-* @argc: argument counter
-* @argv: number of arguments passed
-* Return: least number of coins, 0 if negative amount, 1 if amount not given
+* main - prints the minimum. 
+* @argc: argument counter.
+* @argv: number of arguments passed.
+* Return: least number of coins, 0 if negative amount, 1 if amount not given.
 */
 
 int main(int argc, char *argv[])
