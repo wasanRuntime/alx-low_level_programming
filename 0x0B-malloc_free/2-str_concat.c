@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 #include <stdlib.h>
 /**
  * _strdup - Returns a pointer to a copy of the string given as a parameter.
