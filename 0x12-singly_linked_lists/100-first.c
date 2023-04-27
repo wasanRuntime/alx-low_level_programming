@@ -1,13 +1,12 @@
 #include <stdio.h>
 
-void first(void) __attribute__ ((constructor));
-
+void print_fun(void) __attribute__ ((constructor));
 /**
- * first - prints a string before the main
- * 
+ * print_fun -  prints a string before the main function
  */
-void first(void)
+
+void print_fun(void)
 {
-	printf("You're beat! and yet, you must allow,\n");
-	printf("I bore my house upon my back!\n");
+	printf("You're beat! and yet, you must allow,\n"
+			"I bore my house upon my back!\n");
 }
