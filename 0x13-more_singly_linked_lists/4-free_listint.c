@@ -2,19 +2,19 @@
 
 
 /**
- * free_listint - fuction that free listint_t list
- * @head:-pointer to the heade of the node
- * Return:void
+ * free_listint - fuction that free a list
+ * @head:-pointer to the head of the node
+ * Return:void(nothing)
  */
 
 void free_listint(listint_t *head)
 {
-	listint_t *present_node;
+	listint_t *freed_node;
 
 	while (head != NULL)
 	{
-		present_node = head;
+		freed_node = head;
 		head = head->next;
-		free(present_node);
+		free(freed_node);
 	}
 }
