@@ -3,34 +3,34 @@
 #include <stdio.h>
 
 /**
- * _r - reallocates memory for an array of pointers
+ * _r - reallocates memory for array of pointers
  * to the nodes in a linked list
  * @list: the old list to append
- * @size: size of the new list (always one more than the old list)
+ * @size: size of the new list
  * @new: new node to add to the list
  *
- * Return: pointer to the new list
+ * Return: pointer to the new list always.
  */
 const listint_t **_r(const listint_t **list, size_t size, const listint_t *new)
 {
-	const listint_t **newlist;
+	const listint_t **new_list;
 	size_t i;
 
-	newlist = malloc(size * sizeof(listint_t *));
-	if (newlist == NULL)
+	new_list = malloc(size * sizeof(listint_t *));
+	if (new_list == NULL)
 	{
 		free(list);
 		exit(98);
 	}
 	for (i = 0; i < size - 1; i++)
-		newlist[i] = list[i];
-	newlist[i] = new;
+		new_list[i] = list[i];
+	new_list[i] = new;
 	free(list);
-	return (newlist);
+	return (new_list);
 }
 
 /**
- * print_listint_safe - prints a listint_t linked list.
+ * print_listint_safe - prints a linked list.
  * @head: pointer to the start of the list
  *
  * Return: the number of nodes in the list
