@@ -8,25 +8,25 @@
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *lion, *hyena;
+	listint_t *mangoes, *bananas;
 
-	lion = hyena = head;
-	while (lion && hyena && hyena->next)
+	mangoes = bananas = head;
+	while (mangoes && bananas && bananas->next)
 	{
-		lion = lion->next;
-		hyena = hyena->next->next;
-		if (lion == hyena)
+		mangoes = mangoes->next;
+		bananas = bananas->next->next;
+		if (mangoes == bananas)
 		{
-			lion = head;
+			mangoes = head;
 			break;
 		}
 	}
-	if (!lion || !hyena || !hyena->next)
+	if (!mangoes || !bananas || !bananas->next)
 		return (NULL);
-	while (lion != hyena)
+	while (mangoes != bananas)
 	{
-		lion = lion->next;
-		hyena = hyena->next;
+		mangoes = mangoes->next;
+		bananas = bananas->next;
 	}
-	return (hyena);
+	return (bananas);
 }
