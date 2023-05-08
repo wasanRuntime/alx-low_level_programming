@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 char *create_buffer(char *file);
-void close_file(int fd);
+void close_file(int file_display);
 
 /**
  * create_buffer - copies the content of a file to another file.
@@ -30,17 +30,17 @@ char *create_buffer(char *file)
 
 /**
  * close_file - Closes file descriptors.
- * @fd: The file descriptor to be closed.
+ * @file_display: The file descriptor to be closed.
  */
-void close_file(int fd)
+void close_file(int file_display)
 {
 	int i;
 
-	i = close(fd);
+	i = close(file_display);
 
 	if (i == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		dprintf(STDERR_FILENO, "Error: Can't close file_display %d\n", file_display);
 		exit(100);
 	}
 }
